@@ -1,12 +1,10 @@
 #page {
-    height: 700px;
-	margin-left: 0;
-	margin-right: 0;
-    display: inline-block;
     position: absolute;
+    width: 100%;
 }
 
 #menu {
+    display: initial;
     float: left;
     overflow: hidden;
     position: fixed;
@@ -26,6 +24,7 @@ img {
 }
 
 #Editorial, #Commercial, #Landscape, #Street, #Portrait {
+    margin-left: 350px;
     z-index: -1;
     overflow: hidden;
     background: none;
@@ -177,4 +176,56 @@ p {
 p a {
     color:#fff;
     text-decoration:none;
+}
+
+#mobile-button {
+    position: fixed;
+    right: 30px;
+    top: 40px;
+    display: none;
+}
+
+#mobile-banner {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 15vh;
+}
+
+@media screen and (max-device-width: 600px), screen and (max-width: 600px) {
+
+    #Editorial, #Commercial, #Landscape, #Street, #Portrait {
+        margin-left: 5px;
+        height: 80vh;
+    }
+
+    #menu {
+        display: none;
+        float: right;
+        position: fixed;
+        overflow: hidden;
+        left: initial;
+        width: 100%;
+        height: 80vh;
+        top: 100px;
+    }
+
+    #menu h1 {
+        display: none;
+        width: 100%;
+    }
+
+    #mobile-banner {
+        display: initial;
+    }
+
+    #mobile-button {
+        display: block;
+    }
+
+    #mobile-banner h1 {
+        margin-bottom: 30px;
+        margin-top: 5vh;
+        width: 100%;
+    }
 }

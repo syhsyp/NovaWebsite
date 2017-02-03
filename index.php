@@ -6,12 +6,17 @@
         <script src="index.js"></script>
         <script src='jquery-mousewheel-3.1.13/jquery.mousewheel.min.js'></script>
         <link rel="stylesheet" href="index.css" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, maxium-scale=1, user-scalable=no">
     </head>
 
     <body>
+        <div id="mobile-banner">
+            <h1>NOVA Photography</h1>
+            <button id="mobile-button">B</button>
+        </div>
         <div id="page">
             <div id="menu">
+            
             <h1>NOVA Photography</h1>
         
             <ul class="form">
@@ -25,14 +30,13 @@
             
             </div>
 
-            <a href="mailto:info@novaphoto.co" id="mail">info@novaphoto.co</a>
+            <!-- <a href="mailto:info@novaphoto.co" id="mail">info@novaphoto.co</a> -->
             <?php
                 $types = array("Editorial", "Portrait", "Landscape", "Commercial", "Street");
                 foreach($types as $type) {
                 ?>
                 <div id= "<?= $type ?>">
                     <div id="blank"></div>
-                    <img class="images" src="img/blank.jpg" alt="" />
                     <?php
                     $images = glob("img/".$type."/*.jpg");
                     foreach($images as $image) {
