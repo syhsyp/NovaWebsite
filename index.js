@@ -31,6 +31,7 @@ $(document).ready(function() {
   //center the initial page
   centering($(window).height());
 
+  //Menu click function, when each category is clicked, all images of that category will been displayed
   $('ul.form li a').click(function(e) {
     //e.preventDefault(); // prevent the default action
     //e.stopPropagation; // stop the click from bubbling
@@ -41,7 +42,17 @@ $(document).ready(function() {
 
     $(this).parent().addClass('selected');
     var toShow = $(this).html();
-    document.getElementById(toShow).style.display = "inline-flex";
+   
+    //if that category of images have been loaded, display that div
+    if(document.getElementById(toShow)) {
+      document.getElementById(toShow).style.display = "inline-flex";
+    } else {
+     //if that category of images haven't been loaded, create a related div with id name of that category 
+    //and load all related pictures  var category = document.createElement('div');
+      category.style.id = (toshow);
+      //(missing code here) to load all related images
+      document.getElementById('page').appendChild(category);
+    }
 
     if ($(window).width() < 600) {
       $("#menu").hide(400);
@@ -162,6 +173,7 @@ $(document).ready(function() {
         scrollLeft: "+=" + scrollDistance
       }, 150);
     }
+
   });
     
   
